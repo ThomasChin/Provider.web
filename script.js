@@ -9,8 +9,6 @@ const firebaseConfig = {
   };
   
   firebase.initializeApp(firebaseConfig);
-  
-  firebase.initializeApp(firebaseConfig);
 
 let score = 0;
 const leaderboardRef = firebase.database().ref("leaderboard");
@@ -59,17 +57,20 @@ function handleNameSubmit() {
 const submitNameButton = document.getElementById("submitName");
 submitNameButton.addEventListener("click", handleNameSubmit);
 
-// Listen for changes in the user names list and update the display
-userNamesRef.on("value", (snapshot) => {
+// Function to display the user names on the top of the box
+function displayUserNames(snapshot) {
     userNamesList.innerHTML = ""; // Clear the current list
 
     snapshot.forEach((childSnapshot) => {
         const entry = childSnapshot.val();
         const listItem = document.createElement("li");
         listItem.textContent = entry.name;
-        userNamesList.appendChild(listItem);
+        userNamesList.insertBefore(listItem, userNamesList.firstChild); // Insert at the top of the list
     });
-});
+}
+
+// Listen for changes in the user names list and update the display
+userNamesRef.on("value", displayUserNames);
 
 // Call the updateLeaderboard function to initialize the leaderboard
 updateLeaderboard();
