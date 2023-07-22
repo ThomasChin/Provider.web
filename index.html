@@ -1,31 +1,26 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Clicker Game Leaderboard</title>
+    <title>Leaderboard</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="container">
-        <div class="name-input">
-            <input type="text" id="playerName" placeholder="Enter your name">
-            <button id="submitName">Submit</button>
-        </div>
-        <div class="user-list">
-            <ul id="userList">
-                <!-- User names will be added dynamically using JavaScript -->
-            </ul>
-        </div>
-        <div class="user-names-box">
-            <ul id="userNamesBox">
-                <!-- User names will be added dynamically using JavaScript -->
-            </ul>
-        </div>
+    <h1>Leaderboard</h1>
+    <p>Score: <span id="score">0</span></p>
+    <button id="clickButton">Click Me!</button>
+
+    <div id="inputSection">
+        <input type="text" id="playerName" placeholder="Enter your name">
+        <button id="submitName">Submit</button>
     </div>
 
-    <script src="https://www.gstatic.com/firebasejs/9.0.2/firebase-app.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/9.0.2/firebase-database.js"></script>
+    <div id="userNamesBox">
+        <h2>Names:</h2>
+        <ul id="userNamesList"></ul>
+    </div>
+
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-database.js"></script>
     <script src="script.js"></script>
 </body>
 </html>
