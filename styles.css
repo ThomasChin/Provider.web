@@ -1,0 +1,76 @@
+body {
+  font-family: Arial, sans-serif;
+  text-align: center;
+  background-color: #fff;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  margin: 50px auto;
+  max-width: 320px;
+}
+
+.name-input {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 10px;
+}
+
+.name-input input {
+  padding: 8px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px 0 0 4px;
+  width: 150px;
+}
+
+.name-input button {
+  padding: 8px 20px;
+  font-size: 16px;
+  background-color: #3498db;
+  color: #fff;
+  border: none;
+  border-radius: 0 4px 4px 0;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.name-input button:hover {
+  background-color: #2980b9;
+}
+
+.user-list {
+  text-align: left;
+}
+
+.user-list ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.user-list li {
+  margin: 5px 0;
+}
+
+.user-names-box {
+  background-color: #f5f5f5;
+  border: 1px solid #ccc;
+  padding: 10px;
+  margin-top: 20px;
+  /* Make the box longer */
+  height: 200px;
+  overflow-y: auto; /* Add scrollbar when the content exceeds the height */
+}
+
+.user-names-box ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.user-names-box li {
+  margin: 5px 0;
+}
